@@ -1,9 +1,11 @@
 GIT
   remote: https://github.com/firstdraft/draft_generators.git
-  revision: 4b0d9b35d61c6582beb78504f5e0291953189924
+  revision: b4d8bf8db0c67ccd3f6ffe6d9cce2cb81490fc4a
+  branch: winter-2020
   specs:
     draft_generators (0.0.3)
       devise
+      indefinite_article
 
 GEM
   remote: https://rubygems.org/
@@ -77,6 +79,9 @@ GEM
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
+    auto_increment (1.5.2)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
@@ -103,6 +108,8 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    indefinite_article (0.2.5)
+      activesupport
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -251,6 +258,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  auto_increment
   bootsnap
   debug
   devise

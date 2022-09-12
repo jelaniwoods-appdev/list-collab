@@ -44,6 +44,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 gem 'devise'
+gem "auto_increment"
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -60,7 +61,7 @@ end
 
 group :development do
   gem 'annotate'
-  gem 'draft_generators', github: 'firstdraft/draft_generators'
+  gem 'draft_generators', github: 'firstdraft/draft_generators', branch: "winter-2020"
   gem 'rails-erd'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
