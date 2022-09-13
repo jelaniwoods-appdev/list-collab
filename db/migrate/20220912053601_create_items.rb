@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[7.0]
       t.string :url
       t.string :image
       t.text :description
-      t.integer :position, default: 0
+      t.integer :position
 
       t.timestamps
     end

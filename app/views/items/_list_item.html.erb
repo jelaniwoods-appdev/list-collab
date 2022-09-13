@@ -4,14 +4,25 @@
       <%= image_tag(item.image, class: "mr-3", alt: item.description, width: 75) %>
     <% end %>
     <div class="media-body">
-      <h5 class="mt-0"><%= item.name %></h5>
-      <p><%= item.description  %></p>
+      <div class="d-flex align-items-center">
+      <span class="badge badge-secondary"><%= item.position %></span>
+      <h5 class="ml-3 mt-0"><%= item.name %></h5>
+      </div>
+      <p><%= item.description %></p>
     </div>
   </div>
 
-  <span class="btn btn-sm btn-outline-secondary">
-    <%= link_to item do %>
-      <i class="fas fa-chevron-right fa-fw"></i>
-    <% end %>
-  </span>
+  <%= link_to "##{dom_id(item)}", class: "stretched-link text-secondary", style: "font-size: 1.3em;", "data-toggle": "collapse", role: "button", "aria-expanded": false, "aria-controls": dom_id(item) do %>
+    <i class="fas fa-caret-down"></i>
+  <% end %>
+    <%#= link_to item do %>
+    <%# end %>
+  
 </span>
+
+<div class="collapse" id="<%= dom_id(item) %>">
+  <div class="card card-body">
+    <%# TODO make view helper %>
+    <%= item.youtube_embed.html_safe %>
+  </div>
+</div>

@@ -8,7 +8,7 @@
 #  description :text
 #  image       :string
 #  name        :string
-#  position    :integer          default(0)
+#  position    :integer
 #  url         :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -24,5 +24,12 @@
 #
 class Item < ApplicationRecord
   belongs_to :list
-  auto_increment :position, scope: [ :list_id ] 
+  auto_increment :position, scope: [:list_id]
+
+  def youtube_embed
+    yt_id = url.split('?v=').last
+    <<~HTML
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/#{yt_id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    HTML
+  end
 end

@@ -21,5 +21,11 @@
 #
 class List < ApplicationRecord
   belongs_to :user
-  has_many  :items, dependent: :destroy
+  has_many :items, dependent: :destroy
+
+  before_save :name_to_slug
+
+  def name_to_slug
+    self.slug = name.parameterize
+  end
 end

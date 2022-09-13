@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_053601) do
     t.string "url"
     t.string "image"
     t.text "description"
-    t.integer "position", default: 0
+    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["list_id"], name: "index_items_on_list_id"
