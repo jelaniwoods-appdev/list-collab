@@ -24,6 +24,7 @@
 #
 class Item < ApplicationRecord
   belongs_to :list
+  acts_as_list
   auto_increment :position, scope: [:list_id]
 
   def youtube_embed
