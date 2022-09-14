@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show edit update destroy]
+  before_action :set_item, only: %i[show edit move update destroy]
 
   # GET /items
   def index
@@ -10,6 +10,13 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   def show; end
+
+  def move
+    p "moving from #{@item.position} to:..."
+    p params[:position].to_i
+    @item.insert_at(params[:position].to_i)
+    p "ends up as #{@item.position}"
+  end
 
   # GET /items/new
   def new

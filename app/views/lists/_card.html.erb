@@ -15,8 +15,9 @@
   </div>
 
   <div class="card-body">
-    <div class="list-group list-group-flush" data-controller="drag">
-      <%= render collection: @list.items, partial: "items/list_item", as: :item %>
+    <div class="list-group list-group-flush" data-controller="drag" data-drag-url="/items/:id/move">
+      <%= render collection: @list.items.order(:position), partial: "items/list_item", as: :item %>
+      <%#= render @list.items.order(:position) %>
     </div>
   </div>
 

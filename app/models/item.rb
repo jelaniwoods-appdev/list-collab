@@ -24,8 +24,8 @@
 #
 class Item < ApplicationRecord
   belongs_to :list
-  acts_as_list
-  auto_increment :position, scope: [:list_id]
+  acts_as_list scope: :list
+  # auto_increment :position, scope: [:list_id]
 
   def youtube_embed
     yt_id = url.split('?v=').last

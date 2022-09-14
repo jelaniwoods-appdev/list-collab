@@ -101,6 +101,7 @@ namespace :dev do
       url: 'https://www.youtube.com/watch?v=pHeiyenYcaY'
     )
 
+    p game_list.items.map(&:position)
     p game_list.items.count
   end
 end
