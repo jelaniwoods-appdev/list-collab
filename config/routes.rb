@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   resources :items do
     member do
-      patch :move 
+      patch :move
     end
   end
   resources :lists

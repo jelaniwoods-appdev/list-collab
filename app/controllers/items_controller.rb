@@ -12,10 +12,10 @@ class ItemsController < ApplicationController
   def show; end
 
   def move
-    p "moving from #{@item.position} to:..."
-    p params[:position].to_i
+    Rails.logger.debug "moving from #{@item.position} to:..."
+    Rails.logger.debug params[:position].to_i
     @item.insert_at(params[:position].to_i)
-    p "ends up as #{@item.position}"
+    Rails.logger.debug "ends up as #{@item.position}"
   end
 
   # GET /items/new

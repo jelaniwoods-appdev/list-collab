@@ -73,4 +73,4 @@ group :development do
   # gem "spring"
 end
 
-gem "acts_as_list", "~> 1.0"
+gem 'acts_as_list', '~> 1.0'
